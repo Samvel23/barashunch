@@ -1,5 +1,12 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
+
+const boqonikFont = localFont({
+  src: "./fonts/Bokonique-Bold.otf",
+  variable: "--font-boqonik",
+  display: "swap",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,8 +25,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body>{children}</body>
+    <html
+      lang="hy"
+      className={`${boqonikFont.variable} ${geistSans.variable} ${geistMono.variable}`}
+    >
+      <body className="font-sans">{children}</body>
     </html>
   );
 }
